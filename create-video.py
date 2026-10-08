@@ -1,7 +1,7 @@
 from moviepy import ImageClip, AudioFileClip
 
-image = ImageClip("img.jpg").up
-audio = AudioFileClip("music.mp3")
+image = ImageClip("img.jpg").with_duration(10)  # Set a default duration for the image
+audio = AudioFileClip("music.mp3").subclipped(0, 10)  # Set a default duration for the audio
 
 # Make image duration equal to audio duration
 video = image.with_duration(audio.duration)
